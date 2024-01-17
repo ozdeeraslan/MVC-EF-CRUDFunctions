@@ -1,0 +1,19 @@
+﻿@model Oyun
+
+<h1>Oyun Silme</h1>
+
+<form asp-controller="Oyun" asp-action="Sil" method="post">
+    <div class="form-grop">
+        <label class="form-label" asp-for="Ad">Oyun Adı</label>
+        <input readonly class="form-control" asp-for="Ad" />
+    </div>
+    <div class="form-grop">
+        <div class="form-check">
+            <input disabled class="form-check-input" type="checkbox" asp-for="TekPlatform" />
+            <label class="form-check-label" asp-for="TekPlatform">Tek Platformda Mi?</label>
+        </div>
+    </div>
+
+    <button class="btn btn-danger">Evet</button>
+    <a class="btn btn-outline-danger" asp-action="Listele">HAYIR</a>
+</form>

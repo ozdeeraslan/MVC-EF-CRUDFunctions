@@ -1,0 +1,32 @@
+﻿@model List<Oyun>
+@{
+    ViewData["Title"] = "Oyunlar";
+}
+
+
+<h1>Oyunlar</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Oyun Adi</th>
+            <th>Tek Platformda Mi?</th>
+            <th>CRUD Islemleri</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var oyun in Model)
+        {
+            <tr>
+                <td>@oyun.Id</td>
+                <td>@oyun.Ad</td>
+                <td>@(oyun.TekPlatform ? "Oyun tek platformda!" : "Oyun tek platformda degil!")</td>
+                <td>
+                    <a asp-action="Guncelle" class="btn btn-warning" asp-route-id="@oyun.Id">Güncelle</a>
+                    <a asp-action="Sil" class="btn btn-danger" asp-route-id="@oyun.Id">Sil</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
